@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+	<menu id="Tekst-menu" label="Tekstverwerking">
+		<item label="Geany">
+			<action name="Execute">
+				<execute>geany</execute>
+			</action>
+		</item>
+		<item label="Kladblok leafpad">
+			<action name="Execute">
+				<execute>leafpad</execute>
+			</action>
+		</item>
+		<item label="Notities Typora">
+			<action name="Execute">
+				<execute>typora</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="Openbox-menu" label="Openbox">
+		<item label="Venster instellingen">
+			<action name="Execute">
+				<execute>lxappearance</execute>
+			</action>
+		</item>
+		<item label="Schermresolutie">
+			<action name="Execute">
+				<execute>lxrandr</execute>
+			</action>
+		</item>
+		<item label="Muis en toetsenbord">
+			<action name="Execute">
+				<execute>lxinput</execute>
+			</action>
+		</item>
+		<item label="Openbox configureren">
+			<action name="Execute">
+				<execute>obconf</execute>
+			</action>
+		</item>
+		<item label="Opebox menu">
+			<action name="Execute">
+				<execute>obmenu</execute>
+			</action>
+		</item>
+		<separator/>
+		<item label="reconfigureer openbox">
+			<action name="Reconfigure"/>
+		</item>
+	</menu>
+	<menu id="system-menu" label="Systeem">
+		<item label="terminal">
+			<action name="Execute">
+				<execute>termite</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="Logout-menu" label="Logout">
+		<item label="Logout">
+			<action name="Exit"/>
+		</item>
+		<item label="Herstarten">
+			<action name="Execute">
+				<execute>systemctl restart</execute>
+			</action>
+		</item>
+		<item label="Suspend">
+			<action name="Execute">
+				<execute>systemctl suspend</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="root-menu" label="Openbox 3">
+		<item label="Terminal">
+			<action name="Execute">
+				<execute>termite</execute>
+			</action>
+		</item>
+		<item label="Firefox">
+			<action name="Execute">
+				<execute>firefox</execute>
+			</action>
+		</item>
+		<item label="Bestandsverkenner">
+			<action name="Execute">
+				<execute>pcmanfm</execute>
+			</action>
+		</item>
+		<item label="Openbox menu">
+			<action name="Execute">
+				<execute>obmenu</execute>
+			</action>
+		</item>
+		<separator/>
+		<menu id="Tekst-menu"/>
+		<menu id="system-menu"/>
+		<menu id="Openbox-menu"/>
+		<separator/>
+		<menu id="Logout-menu"/>
+		<item label="Exit">
+			<action name="Execute">
+				<execute>systemctl poweroff</execute>
+			</action>
+		</item>
+	</menu>
+</openbox_menu>

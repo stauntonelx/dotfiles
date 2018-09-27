@@ -1,0 +1,58 @@
+# i3blocks config file
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# change seperator
+align=center
+color=#c5c8c6
+separator=false
+separator_block_width=10
+
+# Global properties
+command=/usr/lib/i3blocks/$BLOCK_NAME
+markup=pango
+
+[volume]
+label=VOL
+instance=Master
+interval=10
+
+[memory]
+label=MEM
+interval=30
+
+[cpu_usage]
+label=CPU
+interval=10
+min_width=C:100.00%
+
+[wifi]
+label=wifi
+instance=wlp3s0
+interval=10
+
+[temperature]
+label=TEMP
+interval=10
+
+[battery]
+interval=30
+
+[time]
+command=date '+%H:%M'
+interval=5

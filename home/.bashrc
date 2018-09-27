@@ -9,12 +9,12 @@
 export TERM='xterm-256color'
 
 # set yaourt to use vim
-export EDITOR="vim"
+export EDITOR="nano"
 export VISUAL=$EDITOR
 
 # colors
-alias ls='ls --color=auto'
-alias ll='ls -lah --color=auto'
+alias ls='ls --color=never --group-directories-first'
+alias ll='ls -lAh --color=never --group-directories-first'
 alias grep='grep --color=auto'
 
 # use less for manpages and colors
@@ -30,12 +30,14 @@ man() {
 	}
 
 # color prompt
-export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \W]\\$ \[$(tput sgr0)\]"
+export PS1="\[$(tput bold)\]\[$(tput setaf 4)\][\u@\h \W]\\$ \[$(tput sgr0)\]"
+PROMPT_COMMAND='echo -en "\033]0; $("pwd") \a"'
 
 # alias pacman
 alias pacrm='sudo pacman -Rs'
 alias pacupg='sudo pacman -Syu'
 alias pacupd='sudo pacman -Syy'
 alias pac='sudo pacman -S'
-
-
+alias pacs='pacman -Ss'
+alias tmux='tmux -f ~/.config/tmux/tmux.conf'
+alias music='ncmpcpp'
