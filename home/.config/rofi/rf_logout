@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Simple script to handle a DIY shutdown menu. When run you should see a bunch of options (shutdown, reboot etc.)
+#
+# Requirements:
+# - rofi
+# - systemd, but you can replace the commands for OpenRC or anything else
+
+chosen=$(echo -e "[Cancel]\nLogout\nShutdown\nReboot\nSuspend\nHibernate\nHybrid-sleep\nSuspend-then-hibernate" | rofi -dmenu -i)
+
+if [[ $chosen = "Logout" ]]; then
+	openbox --exit
+elif [[ $chosen = "Shutdown" ]]; then
+	systemctl poweroff
+elif [[ $chosen = "Reboot" ]]; then
+	systemctl reboot
+elif [[ $chosen = "Suspend" ]]; then
+	systemctl suspend
+elif [[ $chosen = "Hibernate" ]]; then
+	i3lock -i /home/jack/Pictures/wallpaper/lock.png -c 1d1f21 && sleep 1 && systemctl hibernate
+elif [[ $chosen = "Hybrid-sleep" ]]; then
+	systemctl hibernate
+elif [[ $chosen = "Suspend-then-hibernate" ]]; then
+	systemctl suspend-then-hibernate
+fi
